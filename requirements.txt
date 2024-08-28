@@ -1,0 +1,2 @@
+#python version 2024
+django==4.2

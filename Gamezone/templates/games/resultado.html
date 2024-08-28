@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+</head>
+
+<body>
+
+
+    {% extends "games/padre.html" %}
+
+    {% block contenidoQueCambia %}
+    <h1>Resultados de la búsqueda</h1>
+
+    {% if plataformas %}
+    <h2>Plataformas</h2>
+    <ul class="list-group">
+        {% for plataforma in plataformas %}
+        <li class="list-group-item"><strong>Nombre:</strong> {{ plataforma.nombre }}</li>
+        <li class="list-group-item"><strong>Fabricante:</strong> {{ plataforma.fabricante }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-center" style="color: gray;">No se encontraron plataformas.</p>
+    {% endif %}
+
+    {% if juegos %}
+    <h2>Juegos</h2>
+    <ul class="list-group">
+        {% for juego in juegos %}
+        <li class="list-group-item"><strong>Título:</strong> {{ juego.titulo }}</li>
+        <li class="list-group-item"><strong>Género:</strong> {{ juego.genero }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-center" style="color: gray;">No se encontraron juegos.</p>
+    {% endif %}
+
+    {% if jugadores %}
+    <h2>Jugadores</h2>
+    <ul class="list-group">
+        {% for jugador in jugadores %}
+        <li class="list-group-item"><strong>Nombre:</strong> {{ jugador.nombre }}</li>
+        <li class="list-group-item"><strong>Nivel:</strong> {{ jugador.nivel }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-center" style="color: gray;">No se encontraron jugadores.</p>
+    {% endif %}
+
+    {% if personajes %}
+    <h2>Personajes</h2>
+    <ul class="list-group">
+        {% for personaje in personajes %}
+        <li class="list-group-item"><strong>Nombre:</strong> {{ personaje.nombre }}</li>
+        <li class="list-group-item"><strong>Descripción:</strong> {{ personaje.descripcion }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-center" style="color: gray;">No se encontraron personajes.</p>
+    {% endif %}
+
+    {% endblock %}
+
+</body>
+
+</html>

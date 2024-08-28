@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugador</title>
+</head>
+
+<body>
+    {% extends "games/padre.html" %}
+
+
+
+    {% block contenidoQueCambia %}
+
+    <h1>Jugador</h1>
+    <form action="{% url 'jugador' %}" method="post">
+        {% csrf_token %}
+
+        <p>Nombre: <input type="text" name="Nombre" required></p>
+
+        <p>Nivel: <input type="number" name="Nivel" required></p>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    {% endblock %}
+
+</body>
+
+</html>

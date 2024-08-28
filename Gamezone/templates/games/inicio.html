@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+
+<body>
+
+    {% extends "games/padre.html" %}
+
+    {% block contenidoQueCambia %}
+    <h1>Buscar Información</h1>
+    <form class="form-signup" id="contactForm" method="GET" action="{% url 'buscar_info' %}">
+        <div class="row input-group-newsletter">
+            <div class="col">
+                <input class="form-control" id="search" name="titulo" type="search" placeholder="Buscar Información"
+                    aria-label="Buscar" value="" />
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary" id="submitButton" type="submit">Buscar</button>
+            </div>
+        </div>
+    </form>
+    {% endblock %}
+</body>
+
+</html>
