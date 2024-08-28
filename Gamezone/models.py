@@ -25,7 +25,3 @@ class Plataforma(models.Model):
 class Juego(models.Model):
     titulo = models.CharField(max_length=100)
     genero = models.CharField(max_length=50)  # Ejemplo: Aventura, Acción
-
-    nombre = models.CharField(max_length=30)
-    apellido = models.CharField(max_length=30)
-    email = models.EmailField()
